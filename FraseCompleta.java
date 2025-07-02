@@ -37,9 +37,11 @@ public class FraseCompleta {
         int cont = 0;
         String frase;
         int quantFrases = sc.nextInt();
+
+        sc.nextLine();
         
         while (cont < quantFrases) {
-            frase = sc.next().toLowerCase();
+            frase = sc.nextLine().toLowerCase();
             System.out.println(verificarTipoFrase(frase));
             cont++;
         }
