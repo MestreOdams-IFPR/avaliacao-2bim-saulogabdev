@@ -8,14 +8,14 @@ public class BuscaCristaisKyber {
         int inicio = 0;
         int fim = vetor.length - 1;
         int meio = 0;
-        while (inicio < fim) {
+        while (inicio <= fim) {
             meio = (fim + inicio)/2;
             if (vetor[meio] == num) {
                 return meio;
             } else if (vetor[meio] > num) {
-                inicio = meio + 1;
-            } else {
                 fim = meio - 1;
+            } else {
+                inicio = meio + 1;
             }
         }
         return -1;
@@ -30,6 +30,8 @@ public class BuscaCristaisKyber {
     public static void main(String[] args) {
         int numCristais;
         int numConsultas;
+        int consulta;
+        int posicao;
         int contCasos = 1;
         int cont = 0;
         
@@ -41,16 +43,23 @@ public class BuscaCristaisKyber {
                 break;
             }
 
-            System.out.printf("CASE# %d:", contCasos);
-            
             int[] cristais = new int[numCristais];
-
+            
             lerVetorInteiro(cristais);
+            
+            System.out.printf("CASE# %d:\n", contCasos);
 
             while (cont < numConsultas) {
-                
+                consulta = sc.nextInt();
+                posicao = buscaBinaria(cristais, consulta);
+                if (posicao != -1) {
+                    System.out.printf("%d found at %d\n", consulta, posicao);
+                } else {
+                    System.out.printf("%d not found\n", consulta);
+                }
+                cont++;
             }
-
+            contCasos++;
         }
     }
 }
