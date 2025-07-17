@@ -1,9 +1,12 @@
 public class Tribonacci {
-    
+
     public static int calcularTribonacciRec(int n) {
-        if (n == 0) return 0;
-        if (n == 1) return 0;
-        if (n == 2) return 1;
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return 0;
+        if (n == 2)
+            return 1;
         return calcularTribonacciRec(n - 1) + calcularTribonacciRec(n - 2) + calcularTribonacciRec(n - 3);
     }
 
